@@ -1,22 +1,19 @@
-# juliet-examples
+# `juliet` documentation for occultation and phase curves
 
-<i>Prepared by: Jayshil A Patel ([jayshil.patel@astro.su.se](mailto:jayshil.patel@astro.su.se))</i>
+<i>Prepared by: Jayshil A Patel ([jaspa@dtu.dk](mailto:jaspa@dtu.dk))</i>
 
-Minimal working examples for eclipse, eclipse-transit fitting in juliet
-
-Data used: transit lightcurves of WASP-18 observed by TESS in Sector 2 and 3 (see, Data folder).
-
-
-`juliet` identifies the type of fitting by the provided priros:
+This repository provides documentation for occultation and phase curve fitting in `juliet` using real observational data. `juliet` identifies the type of fitting by the provided priros:
 - Priors included limb darkening coefficients (LDCs), `q1` and `q2`: transit fitting
 - Priors included eclipse depth, `fp` but not LDCs: only eclipse fitting
 - Priors included both eclipse depth and LDCs: joint transit and eclipse fitting.
+- Additional priors for different types of phase curve models.
 
 The present repository has some tutorials for this:
-- `eclipse_only.ipynb` notebook: eclipse-only fitting for 1 instrument
-- `transit_and_eclipse.ipynb` notebook: a joint transit and eclipse fitting for 1 instrument
-- `multi-instrument-1.ipynb` notebook: A simultaneous transit and eclipse fitting for 2 instruments; a common transit depth fitted for both instruments, but a different eclipse depth parameters for both instruments (useful for variability checking).
-- `multi-instrument-2.ipynb` notebook: A simultaneous transit and eclipse fitting for 2 instruments; common transit and eclipse depths are fitted both instruments.
-- `multi-instrument-3.ipynb` notebook: A simultaneous transit and eclipse fitting for 2 instruments; different transit depths are fitted for both instruments, while a common eclipse depth for both instruments.
+- `single_instrument.ipynb`: Occultation and transit+occultation fitting for single instrument using TESS data
+- `multi_instruments.ipynb`: Transit+occultation modelling for multiple instruments using TESS+CHEOPS data
+- `ca8_lambert.ipynb`: [Cowan & Agol (2008)](https://ui.adsabs.harvard.edu/abs/2008ApJ...678L.129C/abstract) and Lambertian phase curve model using CHEOPS data. This notebook also demonstrates the peculiarity of CHEOPS data fitting, and how to do that using `juliet`.
+- `kelp_thermal.ipynb`: Thermal emission phase curve modelling with the model from [`kelp`](https://kelp.readthedocs.io/en/latest/index.html) package. This is demonstrated using TESS data.
+- `kelp_refl_homo.ipynb`: Reflected light phase curve for a homogeneous sphere as derived in [Heng et al. 2021](https://ui.adsabs.harvard.edu/abs/2021NatAs...5.1001H/abstract) and implemented in [`kelp`](https://kelp.readthedocs.io/en/latest/index.html) package, using Kepler data.
+- `kelp_refl_inhomo.ipynb`: Reflected light phase curve for a inhomogeneous sphere as derived in [Heng et al. 2021](https://ui.adsabs.harvard.edu/abs/2021NatAs...5.1001H/abstract) and implemented in [`kelp`](https://kelp.readthedocs.io/en/latest/index.html) package, using Kepler data.
 
-Feel free to contact me if you have any questions!
+The Data directory contains all the data needed to run all notebooks. Feel free to contact me if you have any questions!
